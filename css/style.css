@@ -10,6 +10,16 @@
     background-size: cover;
     background-position: center;
 }
+.copyright_footer{
+    position: fixed;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.75);
+    line-height: 3;
+    text-align: center;
+    left: 0;
+   }
 body{
     margin: 0;
     padding: 0;
