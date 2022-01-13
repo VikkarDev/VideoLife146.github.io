@@ -67,3 +67,14 @@ nav ul li a:hover{
     border-radius: 6px;
     
 }
+
+.twitchchat{
+    position: absolute;
+    left: 25%;
+    top: 17%;
+    transform: translate(-50%, 0%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
