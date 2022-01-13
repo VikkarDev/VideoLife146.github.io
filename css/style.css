@@ -78,3 +78,13 @@ nav ul li a:hover{
     justify-content: center;
     align-items: center;
 }
+.youtubevid{
+    position: absolute;
+    right: 22%;
+    top: 17%;
+    transform: translate(50%, 0%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
