@@ -1,147 +1,125 @@
 <?php
 /*
  *	Made by Samerton
- *  http://worldscapemc.co.uk
+ *  https://github.com/NamelessMC/Nameless/
+ *  NamelessMC version 2.0.0-pr9
  *
  *  License: MIT
- *  Copyright (c) 2016 Samerton
+ *
+ *  Main index file
  */
+
+// Uncomment to enable debugging
+//define('DEBUGGING', 1);
+
+if ((defined('DEBUGGING') && DEBUGGING) || (isset($_SERVER['NAMELESSMC_DEBUGGING']) && $_SERVER['NAMELESSMC_DEBUGGING'])) {
+    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 1);
+    error_reporting(-1);
+}
+
+// Ensure PHP version >= 5.4
+if (version_compare(phpversion(), '5.4', '<')) {
+    die('NamelessMC is not compatible with PHP versions older than 5.4');
+}
 
 // Start page load timer
 $start = microtime(true);
-
-// Temp
-date_default_timezone_set('Europe/London');
 
 // Definitions
 define('PATH', '/');
 define('ROOT_PATH', dirname(__FILE__));
 $page = 'Home';
 
-if(!ini_get('upload_tmp_dir')){
-	$tmp_dir = sys_get_temp_dir();
+if (!ini_get('upload_tmp_dir')) {
+    $tmp_dir = sys_get_temp_dir();
 } else {
-	$tmp_dir = ini_get('upload_tmp_dir');
+    $tmp_dir = ini_get('upload_tmp_dir');
 }
 
-ini_set('open_basedir', ROOT_PATH . PATH_SEPARATOR  . $tmp_dir);
+if ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) {
+    ini_set('session.cookie_secure', 'On');
+}
+
+ini_set('open_basedir', ROOT_PATH . PATH_SEPARATOR  . $tmp_dir . PATH_SEPARATOR . '/proc/stat');
 
 // Get the directory the user is trying to access
 $directory = $_SERVER['REQUEST_URI'];
-
 $directories = explode("/", $directory);
 $lim = count($directories);
 
-// Installer?
-if(is_file('pages/install.php')){
-	if(isset($_GET['from']) && $_GET['from'] == 'install'){
-		if(!unlink('pages/install.php')) die('Please delete <strong>pages/install.php</strong> before continuing.');
-	} else {
-		$page = 'install';
-
-		require('core/init.php');
-		require('pages/install.php');
-		die();
-	}
+if (isset($_GET['route']) && $_GET['route'] == '/rewrite_test') {
+    require_once('rewrite_test.php');
+    die();
 }
 
 // Start initialising the page
-require('core/init.php');
+require(ROOT_PATH . '/core/init.php');
 
-// Load the main page content
-// Check if the page actually exists..
-// First, check the contents of the URL
-if(empty($directories[0]) && empty($directories[1])){
-	// Must be the index page
-	$page_path = 'pages/index.php';
-} else {
-	$n = 0;
-	foreach($directories as $directory){
-		if(strpos($directory, '?') !== false){
-			$params = $directory; // Get URL parameters
-			unset($directories[$n]);
-		}
-		$n++;
-	}
-	$page_path = 'pages' . implode('/', $directories);
-	if(substr($page_path, -1) == "/"){
-		$page_path = rtrim($page_path, '/');
-	}
+if (!isset($GLOBALS['config']['core']) && is_file(ROOT_PATH . '/install.php')) {
+    Redirect::to('install.php');
 }
 
-// Include the page
-if(is_file($page_path)){
-	require($page_path);
+// Get page to load from URL
+if (!isset($_GET['route']) || $_GET['route'] == '/') {
+
+    if (count($directories) > 1 && (!isset($_GET['route']) || (isset($_GET['route']) && $_GET['route'] != '/'))) {
+        require(ROOT_PATH . '/404.php');
+    } else {
+        // Homepage
+        $pages->setActivePage($pages->getPageByURL('/'));
+        require(ROOT_PATH . '/modules/Core/pages/index.php');
+    }
+
 } else {
-	if(is_file($page_path . '.php')){
-		require($page_path . '.php');
-	} else {
-		if(is_dir($page_path)){
-			if(file_exists($page_path . '/index.php')){
-				require($page_path . '/index.php');
-			}
-		} else {
-			// Profile page?
-			if($directories[1] == 'profile'){
-				if(isset($directories[2])) $profile = htmlspecialchars($directories[2]);
-				require('pages/profile.php');
-				// Kill the script
-				die();
-			}
+    $route = rtrim(strtok($_GET['route'], '?'), '/');
 
-			// API?
-			if($directories[1] == 'api'){
-				if(is_file('pages' . DIRECTORY_SEPARATOR . 'api' . DIRECTORY_SEPARATOR . $directories[2] . DIRECTORY_SEPARATOR . 'index.php')){
-					require('pages' . DIRECTORY_SEPARATOR . 'api' . DIRECTORY_SEPARATOR . $directories[2] . DIRECTORY_SEPARATOR . 'index.php');
-					die();
-				}
-			}
+    // Check modules
+    $modules = $pages->returnPages();
 
-			// Custom page?
-			$page_path = explode('/', $page_path);
+    // Include the page
+    if (array_key_exists($route, $modules)) {
+        $pages->setActivePage($modules[$route]);
+        if (!isset($modules[$route]['custom'])) {
+            $path = join(DIRECTORY_SEPARATOR, array(ROOT_PATH, 'modules', $modules[$route]['module'], $modules[$route]['file']));
 
-			$custom_pages = $queries->getWhere('custom_pages', array('url', '=', '/' . $page_path[1]));
+            if (!file_exists($path)) {
+                require(ROOT_PATH . '/404.php');
+            } else { 
+                require($path);
+            }
+            
+            die();
+        } else {
+            require(join(DIRECTORY_SEPARATOR, array(ROOT_PATH, 'modules', 'Core', 'pages', 'custom.php')));
+            die();
+        }
+    } else {
+        // Use recursion to check - might have URL parameters in path
+        $path_array = explode('/', $route);
 
-			if(count($custom_pages)){
-				$page_title = $custom_pages[0]->title;
-				$page_content = $custom_pages[0]->content;
-				$page_id = $custom_pages[0]->id;
+        for ($i = count($path_array) - 2; $i > 0; $i--) {
 
-				if($custom_pages[0]->redirect == 1) $redirect_page = htmlspecialchars($custom_pages[0]->link);
+            $new_path = '/';
+            for($n = 1; $n <= $i; $n++){
+                $new_path .= $path_array[$n] . '/';
+            }
 
-				// For navbar
-				$page = $custom_pages[0]->title;
+            $new_path = rtrim($new_path, '/');
 
-				// Include the page
-				require 'pages/extra.php';
+            if (array_key_exists($new_path, $modules)) {
+                $path = join(DIRECTORY_SEPARATOR, array(ROOT_PATH, 'modules', $modules[$new_path]['module'], $modules[$new_path]['file']));
 
-				// Kill the page
-				die();
-			}
+                if (file_exists($path)) {
+                    $pages->setActivePage($modules[$new_path]);
+                    require($path);
+                    die();
+                }
+            }
 
-			// Doesn't exist without trailing '/', try again with trailing '/'
-			$custom_pages = $queries->getWhere('custom_pages', array('url', '=', '/' . $page_path[1] . '/'));
+        }
 
-			if(count($custom_pages)){
-				$page_title = $custom_pages[0]->title;
-				$page_content = $custom_pages[0]->content;
-				$page_id = $custom_pages[0]->id;
-
-				if($custom_pages[0]->redirect == 1) $redirect_page = htmlspecialchars($custom_pages[0]->link);
-
-				// For navbar
-				$page = $custom_pages[0]->title;
-
-				// Include the page
-				require 'pages/extra.php';
-
-				// Kill the page
-				die();
-			}
-
-			// 404
-			require('404.php');
-		}
-	}
+        // 404
+        require(ROOT_PATH . '/404.php');
+    }
 }
-?>

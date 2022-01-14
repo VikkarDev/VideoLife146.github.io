@@ -1,56 +1,49 @@
 <?php
 /*
  *	Made by Samerton
- *  http://worldscapemc.co.uk
+ *  https://github.com/NamelessMC/Nameless/
+ *  NamelessMC version 2.0.0-pr8
  *
  *  License: MIT
+ *
+ *  Two Factor Auth signin page
  */
 
 // Two Factor Auth signin
-$_SESSION['username'] = Input::get('username');
-$_SESSION['password'] = Input::get('password');
-$_SESSION['remember'] = Input::get('remember');
-?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?php echo $sitename; ?> sign in page">
-    <meta name="author" content="Samerton">
-	<?php if(isset($custom_meta)){ echo $custom_meta; } ?>
+if (isset($_POST['username'])) {
+    $_SESSION['username'] = $_POST['username'];
+} else if (isset($_POST['email'])) {
+    $_SESSION['email'] = $_POST['email'];
+}
 
-	<?php
-	// Generate header and navbar content
-	// Page title
-	$title = $user_language['sign_in'];
+$_SESSION['password'] = $_POST['password'];
+$_SESSION['remember'] = $_POST['remember'];
+$_SESSION['tfa'] = true;
 
-	require('core/includes/template/generate.php');
-	?>
+if (Session::exists('tfa_signin')) {
+    $smarty->assign('ERROR', Session::flash('tfa_signin'));
+}
 
-	<!-- Custom style -->
-	<style>
-	html {
-		overflow-y: scroll;
-	}
-	</style>
+// Smarty variables
+$smarty->assign(
+    array(
+        'TWO_FACTOR_AUTH' => $language->get('user', 'two_factor_auth'),
+        'TFA_ENTER_CODE' => $language->get('user', 'tfa_enter_code'),
+        'TOKEN' => Token::get(),
+        'SUBMIT' => $language->get('general', 'submit')
+    )
+);
 
-  </head>
-  <body>
-    <div class="container">
-	  <div class="well">
-		<form action="" method="post">
-		  <h2><?php echo $user_language['two_factor_authentication']; ?></h2>
-		  <?php if(Session::exists('tfa_signin')) echo Session::flash('tfa_signin'); ?>
-		  <p><?php if($user_query[0]->tfa_type == 1) echo $user_language['tfa_enter_code']; else echo $user_language['tfa_enter_email_code']; ?></p>
-		  <input type="text" class="form-control" name="tfa_code">
-		  <input type="hidden" name="tfa" value="true">
-		  <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-		  <br />
-		  <input type="submit" value="<?php echo $general_language['submit']; ?>" class="btn btn-primary">
-		</form>
-	  </div>
-	</div>
-  </body>
-</html>
+// Load modules + template
+Module::loadPage($user, $pages, $cache, $smarty, array($navigation, $cc_nav, $mod_nav), $widgets);
+
+$page_load = microtime(true) - $start;
+define('PAGE_LOAD_TIME', str_replace('{x}', round($page_load, 3), $language->get('general', 'page_loaded_in')));
+
+$template->onPageLoad();
+
+require(ROOT_PATH . '/core/templates/navbar.php');
+require(ROOT_PATH . '/core/templates/footer.php');
+
+// Display template
+$template->displayTemplate('tfa.tpl', $smarty);

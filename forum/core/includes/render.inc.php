@@ -12,6 +12,7 @@
     // if there are pages to be shown
     if ($pages > 1 || $alwaysShowPagination === true) {
 ?>
+<nav>
 <ul class="<?php echo implode(' ', $classes); ?>">
 <?php
         /**
@@ -33,7 +34,7 @@
             array_push($classes, 'disabled');
         }
 ?>
-    <li class="<?php echo implode(' ', $classes); ?>"><a href="<?php echo $href; ?>"><?php echo $previous; ?></a></li>
+    <li class="page-item <?php echo implode(' ', $classes); ?>"><a class="page-link" href="<?php echo $href; ?>"><?php echo $previous; ?></a></li>
 <?php
         /**
          * if this isn't a clean output for pagination (eg. show numerical
@@ -77,13 +78,13 @@
                     $href
                 );
 ?>
-    <li class="number"><a data-pagenumber="<?php echo ($current + $x - $leading); ?>" href="<?php echo $href; ?>"><?php echo ($current + $x - $leading); ?></a></li>
+    <li class="page-item number"><a class="page-link" data-pagenumber="<?php echo ($current + $x - $leading); ?>" href="<?php echo $href; ?>"><?php echo ($current + $x - $leading); ?></a></li>
 <?php
             }
 
             // print current page
 ?>
-    <li class="number active"><a data-pagenumber="<?php echo $current; ?>" href="#"><?php echo $current; ?></a></li>
+    <li class="page-item number active"><a class="page-link" data-pagenumber="<?php echo $current; ?>" href="#"><?php echo $current; ?></a></li>
 <?php
 			// Prevent displaying any extra crumbs
 			if($current != $max){
@@ -100,7 +101,7 @@
 						$href
 					);
 ?>
-    <li class="number"><a data-pagenumber="<?php echo ($current + $x + 1); ?>" href="<?php echo $href; ?>"><?php echo ($current + $x + 1); ?></a></li>
+    <li class="page-item number"><a class="page-link" data-pagenumber="<?php echo ($current + $x + 1); ?>" href="<?php echo $href; ?>"><?php echo ($current + $x + 1); ?></a></li>
 <?php
 				}
 			}
@@ -125,7 +126,8 @@
             array_push($classes, 'disabled');
         }
 ?>
-    <li class="<?php echo implode(' ', $classes); ?>"><a href="<?php echo $href; ?>"><?php echo $next; ?></a></li>
+    <li class="page-item <?php echo implode(' ', $classes); ?>"><a class="page-link" href="<?php echo $href; ?>"><?php echo $next; ?></a></li>
 </ul>
+</nav>
 <?php
     }

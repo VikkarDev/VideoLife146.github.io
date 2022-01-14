@@ -1,548 +1,660 @@
-The notes for each release
+NamelessMC version 2 Changelog
 
-0.1.0
+2.0.0 pr-1
 - Initial release
 
-0.2.0
-- Add Minecraft Market integration
-- No longer need to define web store packages manually, they will be automatically synchronised with your web store
-
-0.2.1
-- Fix missing table and column if installed from new after the 0.2 release
-- Fix post authors name showing Blue not White on homepage (credit: dwilson390)
-
-0.2.2
-- Fix reputation system redirecting to forum index
-- Fix "headers already sent" errors in the installer
-- Fix missing rules links in footer
-- Fix 404 upon clicking friend's face on profile pages (credit: dwilson390)
-- Fix users being inactive by default after being created by an admin
-- Fix issue with deleting a post
-
-0.3.0
-- Add support for SRV records
-- Add support for Ban Management and MaxBans
-- Fix issue with sticky thread not showing in forum table view
-- Add notice about replacing files manually whilst upgrading
-
-0.3.1
-- Fix missing link to Infractions from admin sidebar
-- Add option to disable infractions from Pages page
-- Fix 404 on Help page
-- Fix plain white page on Donate page if web server is running PHP < 5.5 and user is not logged in
-- Fix issue where donation currency always shows as GBP in latest donors list
-- Fix issue where post editor occasionally doesn't show up in Edit Post
-- Add ability to edit the post title in Edit Post if the post is OP
-- Fix plain white page whilst moving threads if web server is running PHP < 5.5
-- Make images responsive
-- Add ability to delete a user from the admin panel
-- Prevent users signing up with an already used email address
-- Update CKEditor to include Bootstrap theme and Youtube button
-- Update post editor to include Youtube button and changing text's colour, plus a slight button reshuffle
-- Fix issues relating to having custom display names disabled
-- Fix updating UUID and Minecraft usernames of users from the Admin panel
-- Add user's avatar to navbar
-- Change the UUID integration class to use cURL instead of file_get_contents
-- Add time to when user registered on profile pages
-- Add upgrade instructions to admin upgrade page instead of linking to Spigot
-
-0.3.2
-- Fix issue where a date would not display correctly in the punishments ModCP page
-- Fix error whilst clicking on a user who has given reputation in modal in view topic page
-- Improvements to the private messaging system, including fixing notifications and also a private message button on user profiles
-- Staff application system
-
-0.3.3
-- Add a method of querying a Minecraft server externally in case the internal library doesn't work
-- Fix buttons displaying incorrectly if there aren't a multiple of 4 vote sites defined
-- Add LiteBans infractions integration
-- Fix issue where changing users group whilst having custom displaynames disabled would remove their avatar
-- Attempt to fix errors relating to timezones not being set - temporary fix until timezone support is included
-- Add field to change outgoing email address in the AdminCP
-- Add option to allow moderators to accept or reject applications
-- Fix videos embedded in posts not showing up
-- Add missing sorting function for latest posts
-- Fix issue where group forum permission checkboxes will be ticked even if the group doesn't have access to that forum.
-- Fix issue with favicon not displaying on all pages (credit: dwilson390)
-- Fix issue which would occur when editing a reply would remove a topic's title
-- Fix issue that would arise upon quoting a post containing an inverted comma
-- Fix issue when deleting posts
-- Fix issue which would occur when inserting data into the database, or updating existing data
-
-0.4.0
-- Remove unnecessary form validation from the AdminCP general settings tab
-- Fix issues where custom avatars would not display properly
-- Fix issues with MinecraftMarket synchronisation
-- Allow manual activation of accounts
-- Fix issue whereby a validation variable was not defined
-- Fix issue upon registration if UUID was not obtainable
-- Fix message status not being changed to "read" if the user is the author
-- Add user tagging functionality to the forums, thanks to @fetch404
-- Add button to delete a staff application question
-- Fix forum table column widths
-
-0.4.1
-- Add support for pre Minecraft 1.7 servers
-- Don't lock accounts after submitting a password reset
-- Add XenForo converter
-- Allow use of hyperlinks in signatures
-- Sanitise usernames and fix blue hyperlinks in reports
-- Fix friends heads moving after hovering on profile pages
-- Add link to new repository for 1.0.0 in readme
-- Remove port number from index page if it is 25565
-- Increase length of password field and hash fields
-- Replace spaces in Minecraft usernames when checking if it is a valid Minecraft account
-- Decrease minimum username length to 3 characters
-- Add more padding to Vote page
-- Add ability to alter an existing database column
-
-1.0.0
-- Add new core modules
-- Add new addons
-- Add upgrader from 0.4.1
-- Add new languages, currently includes Czech, EnglishUK, German, Spanish
-- Add templates
-- Add themes
-- Add new optional email library
+2.0.0 pr-2
+- Fix issue with editing user in AdminCP
+- Prevent non-moderators replying to locked topics
+- Prevent signature image overflow
+- Remove unnecessary header template file
+- Fix registration issue
+- Fix recaptcha issues in upgrade script
+- Minor forum updates
+- Update Mojang API URL
+- Fix incorrect "last user" information in PMs
+- Redirect to previous page after login
+- Allow use of HTML in report content
 - Add forum labels
-- Add basic subforums
-- Add contributor list to readme
-- Add page timer
-- Add ability to enable error reporting from within the AdminCP
-- Add ability to view errors from the server query from within the AdminCP
-- Start support for the upcoming Nameless server plugin
-- Remove 'ago' from language file as the format may not be correct in certain languages
-- Add MCStock integration
-- Fix issue which would occur when multiple package rows are needed on the Donate page
-- Fix issue where custom avatars wouldn't upload, and also where the ability to disable a user's avatar was not available within the AdminCP
-- Create placeholder for Avatars folder, as previously it would not be included in the download due to it being empty
-- Allow for non-premium users to register on the website (optional)
-- New permissions which allow for any group to view the ModCP/AdminCP if desired
-- Add "target" as an allowed HTML attribute
-- Improved install proccess, added dependencies and tidied errors
-- Added example Nginx configuration
-- Only sanitize input, not output for private messages
-- Add GitHub link to footer
-- Allow editing HTML source of custom pages
-- Allow hiding link to a custom page
-- Removed unnecessary line breaks from the AdminCP's Custom Pages tab
-- Fix issue where people could add each other as friends multiple times
-- Allow users to change their own passwords
-- Allow iFrame frameBorder attribute on custom pages
-- Add a new IP field which the Minecraft server query uses, to prevent looking up SRV records. Also allows support for virtual hosts
-- Gravatar support
-- Display recently online users
-- Display when a user was last online on their profile
-- Add forum breadcrumbs
-- Add forum search ability
-- Allow border-style, border-width, height and width CSS attributes in custom pages
-- Fix images contributing to signature character limit
-- New updater
+- Update panels in AdminCP night theme
+- Small AdminCP label fixes
+- Update default template Bootstrap version
+- Update core Bootstrap version
+- Update profile template
+- Fix signin issue with numeric usernames
+- Fix negative reactions not creating
+- Allow creating new instances of custom DB class
+- Update AdminCP registrations graph
+- Change popover placement in AdminCP
+- Increase query interval
+- Display success message upon sending PM reply
+- Update installer and configuration methods
+- Display errors if unable to create config + cache
+- Update htaccess
+- Fix installation detection
+- Separate core JS into templates
+- Add maintenance mode
+- Allow logging in whilst in maintenance mode 
+- Prevent admin account switch in AdminCP 
+- Fix installer not loading 
+- Allow installer translations
+- Add default database address to installer 
+- Update admin auth screen layout
+- Remove deprecated mcrypt requirement, along with a now unused function
+- Fix permission check for configuration file
+- Add AuthMe integration and Minecraft service status
+- Fix invalid charset in installer
+- Fix AdminCP mobile navbar toggler not showing
+- Update cp_dark.css
+- Fix AdminCP auth + password changing
+- Add switch to toggle error reporting
+- Fix error in 404 page
+- Update PasswordHash class
+- Update form tokens
+- Allow per-user timezones
+- Add topics and posts to AdminCP overview stats graph
+- Fix potentially incorrect news ordering
+- Add card colour for Minecraft service status "Slow"
+- Define page on register page
+- Update post editor
+- Fix minor login/logout issues
+- Apply GeSHi to new topics and edited posts
+- Fix AdminCP security log sorting
+- Add force-HTTPS option to AdminCP
+- Fix post word wrapping and temporarily disable the code editor
+- Add Minecraft server query to homepage
+- Allow editing + deleting Minecraft servers
+- Fix sub-server queries
+- Fix invalid MySQL column default value
+- Fix timezone offsets not displaying minutes correctly
+- Minor forum SEO improvements
+- Add contact page, new email class and email errors + testing
+- Add registration email verification toggle in AdminCP
+- Add Minecraft server query error logging
+- Add Minecraft server banners
+- Allow purging Minecraft query errors
+- Complete mcassoc integration
+- Add terms and conditions page, and the ability to modify them
+- Update installer
+- Add avatar configuration, including the ability to upload a default avatar
+- Fix AdminCP -> Minecraft PHP notice
+- Add forgot password functionality
+- Add forum topic label permissions
+- Add forum search
+- Update Font Awesome
 
-1.0.1
-- Remove mysqlnd requirement
-- Fix issue where, instead of the topic author, the last user to post in the topic was shown in the latest discussions view.
-- Fix invalid token on creating a new private message
-- Fix "remember me" on signin not actually remembering the user
-- Prevent users navigating to /pages directory manually
-- Remove unnecessary tr tag from the play page template
-- Add Minecraft status module to forum
-- Add better registration error messages
-- Add reCAPTCHA secret key field to AdminCP
-- Change method of checking to see if a Minecraft username is valid
+2.0.0 pr-3
+- Update existing translations
+- Add Romanian and Swedish translations
+- Add missing profile post term to all languages
+- Update Bootstrap version to v4 alpha 6
+- Fix server banner issues
+- Add missing font file
+- Fix white screen if no avatar is uploaded
+- Only display 5 forum posts on profile pages 
+- Fix AdminCP forums page navbar
+- Fix potentially broken AdminCP link with non-friendly URLs
+- Update Minecraft server banners and allow custom backgrounds
+- Allow dismissing maintenance mode alert
+- Check if username already exists in Authme connector
+- Update installer requirements
+- Fix banner issues with PHP < 7.0
+- Fix issue with maintenance mode message editor
+- Fix incorrect forum order
+- Fix login page in maintenance mode without friendly URLs
+- Fix avatar size in news section
+- Update DataTables Bootstrap plugin to v4
+- Fix potential overflow in user dropdown
+- Add port field to email configuration
+- Update forum module, fixing installation check
+- Fix no forums showing for guests
+- Display module author
+- Add template alert language entries
+- Fix navbar issue
+- Update email content type to html
+- Update group tags within installer to use badges instead of labels
+- Tidy installer language file includes
+- Create default label types
+- Add back button to edit group page
+- Add widget system, along with Twitter and Facebook widgets
+- Add latest post widget
+- Add header to latest posts widget template
+- Track topic views via session if cookies are disabled
+- Update .nav-list CSS
+- Add function to get avatar from UUID
+- Add friendlier forum URLs
+- Fix editor Emoji icon and tabs
+- Add secondary user groups
+- Fix pagination issue with no non-sticky topics in forum
+- Allow deleting templates
+- Fix widget issue with maintenance mode for non-admins
+- Add Discord widget
+- Add user doesn't exist page
+- Add missing language files
+- Allow blocking users
+- Fix error display issue in change password template
+- Fix match password for forgot password page
+- Fix potential undefined offset issue
+- Add player count graphs
+- Add rel="nofollow noopener" and target="_blank" to every external link
+- Update NamelessMC footer link
+- Fix potential undefined variable error
+- Update server query internal
+- Add blocked users table to installation, and update infractions table
+- Add background-size: cover; to background image
+- Fix expired Discord invite
+- Fix successful login alert
+- Add user related variables
+- Update Paginator class, allowing for custom pagination CSS
+- Update site name in two factor authentication
+- Add missing include to user messaging file
+- Add extra template variables to ModCP reports
+- Reshuffle view topic buttons
+- Add user punishments
+- Update server player count query
+- Update punishment link in AdminCP
+- Prevent viewing template files
+- Fix incorrect banner URL
+- Remove port 443 from getSelfURL() if https is enabled
+- Fix issue with custom pagination classes
+- Create htaccess in cache directory
+- Add custom page system
+- Fix custom page icons
+- Add ability to re-order navbar
+- Fix spoilers + emojis on custom pages
+- Add module name to widget list
+- Add option to enable page load timer
+- Add missing view to ModCP punishments
+- Fix incorrect pagination link
+- Add signature to UserCP settings
+- Move AdminCP navbar contents into container
+- Allow editing/deleting profile wall posts
+- Update updater URL
 
-1.0.2
-- Update German translation (thanks to @manuelgu)
-- Fix issue with resetting passwords on servers running PHP < 5.5
-- Fix issue where UUID would return empty during registration
-- Fix Buycraft API query
+2.0.0 pr-4
+- Update + add new translations
+- Update route check
+- Update DataTables
+- Fix ' in database details not being entered into config correctly
+- Remove non-alphanumeric characters from forum URLs
+- Allow spaces in alphanumeric check
+- Fix subforums not loading
+- Fix image overflow in homepage news posts
+- Fix issues with Minecraft banner MOTD colours
+- Add default 25565 port to banner query
+- Add new core permission system
+- Add missing permissions to installer update script
+- Add functionality to "Can view other users' topics?" permissions
+- Add reCAPTCHA configuration
+- Fix AdminCP overview chart issue
+- Prevent changing own group in AdminCP -> Users tab without permission
+- Update default template to Bootstrap 4 beta 2
+- Add line break between forum posts
+- Add missing Javascript files to template
+- Add stringToURL function to Util class
+- Add user avatar to navbar
+- Add .idea to gitignore
+- Fix incorrect last reply in forum index
+- Fix broken pagination in forum view
+- Fix Discord widget size
+- Add legacy v1 API
+- Add 6h, 12h, 1d, 15d to graph options
+- Automatically remove template if it doesn't exist
+- Set port to 25565 if none is specified
+- Fix homepage server offline message
+- Fix API reports alert, and order reports by last update time
+- Add view count to profile pages
+- Fix nickname changing in AdminCP not working
+- Fix broken "Remember Me" button on login page
+- Add private profiles
+- Fix unique username check in UserCP, and minor profile changes
+- Preserve private profile setting value when private profiles are disabled
+- Remove container inside container
+- Bypass private profile permission in Users & Groups
+- Update AdminCP users private profile query
+- Reset permissions variables in AdminCP forum permission editing
+- Fix share dropdown overflow
+- Fix timezone related forum post date issue
+- Fix issue on profile page
+- Fix new topic post timezone
+- Fix maintenance login link
+- Display dropzone debugging info in console
+- Update external query API
+- Fix URL for reports from API
+- Fix AdminCP night mode editor text colour
+- Allow a custom message when registration is disabled
+- Add root path constant to all file includes
+- Check for mysql/mysqlnd PHP extensions
+- Fix missing database setting
+- Update AdminCP user creation
+- Default request scheme to http if not set
+- Fix new topic anti spam check
+- Add option to change MySQL storage engine
+- Add author's group to latest announcements
+- Add default server IP variable to index page
+- Fix card body on homepage
+- Add permission to nicknames
+- Allow viewing sticky topics in only view own topic forums
+- Add email field to contact form
+- Update AdminCP modules file check
+- Add error message for sending emails too quickly
+- Allow custom HTML lang attribute on 404 pages
+- Fix default language for root user
+- Allow languages to specify their own meta charset content
+- Fix broken topics with "banner" or "profile" in title
+- Update mcassoc return link
+- Prevent saving 404 not found page as last page
+- Add all user groups to Smarty variable on profile page
+- Optimise images
+- Add homepage URL as Smarty variable
+- Fix potential AuthMe connector issues
+- Move CSS from core to default template
+- Update default template to Bootstrap 4.0.0
+- Add Bootswatch themes to default template
+- Update navbar template
+- Update timeline on profile pages
+- Replace panels in AdminCP with cards
+- Add redirect forums
+- Fix fatal error if $ping doesn't exist
+- Make default server query variables available on all pages
+- Add example v2 nginx config
+- Fix : sometimes showing after server IP on homepage
+- Add SET NAMES command to custom DB class
+- Fix broken "Minecraft Service Status"
+- Add forum post graph to UserCP
+- Add custom error handler
+- Disable server banners if exif_imagetype isn't installed
+- Allow viewing error logs in AdminCP
+- Add extra user related variables to topic view
+- Modify topic view Smarty variables
+- Update admin group permissions within installer upgrade
+- Add initial, untested API implementation
+- Allow API to be accessed when maintenance mode is enabled
+- Update getLatestNews function
+- Start on hook system, add Discord webhook
+- Change "inputted" to "entered" to make phrase clearer
+- Fix issue with enabling the first forum web hook
+- Update module installation
+- Allow adding class to <html> via template
+- Update nginx example config
+- Fix issue with incorrect API key
+- Update default template initialisation
+- Update route check in default template
+- Fix AdminCP users nickname issue
+- Start alternative method of account validation through API
+- Add default_group column to groups table
+- Add message if invalid email provided in installer
+- Fix incorrect login redirect for non-friendly URLs in a subdirectory
+- Fix API registration default group
+- Fix AdminCP night mode table font colour
+- Show all groups in post validation group dropdown
+- Add JS/CSS/subdirectory support to template editor
+- Change unicode charset to utf8mb4
+- Fix debugging being permanently disabled
+- Allow disabling mcassoc integration once enabled
+- Fix last IP being reset when editing users in the AdminCP
+- Add card to view topic template
+- Temporarily remove reset password link in AdminCP
+- Add cookie notice
+- Allow switching between usernames + emails for logins
+- Add username sync option to API using serverInfo method
+- Fix wrong translation showing for forum stats
+- Update installer login
+- Fix signin details being remembered if tfa is cancelled
+- Change update zip obtained for updater
+- Add logging implementation
+- Allow templates to add <style> tags to head
+- Update editor emojis
+- Update 404/error back buttons to work on Safari
+- Fix login issue
+- Allow changing path within installer
+- Add option to test and set friendly URLs in installer
+- Add missing editor emoji file
+- Update log class
+- Add online staff + online members widgets
+- Remove built-in forum online user list
+- Add privacy policy page + default policy
+- Remove user logs upon account deletion
+- Remove more user data upon account deletion
+- Fix update execute issues
 
-1.0.3
-- Add option to disable email verification
-- Alert user on application completion
-- View messages and alerts in navbar dropdown
-- Update Chart.js and registrations chart in AdminCP
-- Fix mailer "message body empty" error
-- Add TeamSpeak IP to voice server viewer
+2.0.0 pr-5
+- Full list https://github.com/NamelessMC/Nameless/compare/v2.0.0-pr4...v2.0.0-pr5
+- Many bugfixes
+- Translation updates
+- New staff panel
+- RTL language support
+- User popovers
+- Template + module system changes
+- API rank sync
+- Ability for templates to toggle editor dark mode
+- Navbar + forum icons
+- Full multi language alert support
+- Follow topics
+- Sitemap generator
+- Click-to-copy IP
+- Minecraft server status page
+- Auto close spoilers
+- Other minor additions
 
-1.0.4
-- Fix potential fatal error during installation
-- Start to fix JavaScript for CloudFlare (thanks to @computerwizjared)
-- Set last online date upon registration
-- Delete user's topics and posts on user deletion
-- Fix duplicate user in PM listing and PM view
-- Fix Donate page redirecting with a custom language
-- Fix error on post deletion
-- Fix Spanish translation (thanks to @lockerecca)
-- Fix incorrect PM author
-- Allow changing font colour in custom pages
-- Fix punishments
+2.0.0 pr-6
+- Translation updates
+- Add Lithuanian and Polish languages
+- Update nav ordering
+- Rename UserCP to Account
+- Fix panel user edit Markdown issue
+- Fixed install language
+- Fix v1 upgrader issue
+- Fix apostrophes not showing when editing posts
+- Add indentation to panel sidebar child links
+- Shorten Debugging + Maintenance in sidebar to Maintenance
+- Allow popover hover in StaffCP
+- Add timeout to dashboard player count graph
+- Update user list date sort
+- Fix sidebar links not expanding on iOS
+- Fix terms page footer
+- Fix error when deleting user
+- Fix users not being promoted after validating
+- Fix users table width sometimes being too large
+- Fix post validation group not updating
+- Update login username title if Minecraft is disabled
+- Add forum drag reordering
+- Add subforum indentations in StaffCP
+- Add $template object to all loadPage calls
+- Show normal avatar if Minecraft is disabled on profile pages
+- Fix non-friendly URL subfolder login redirect
+- Replace &nbsp and &bull in Discord hook
+- Fix post link potentially being incorrect
+- Fix nickname not updating in StaffCP if disabled
+- Move MCAssoc JS to after include
+- Fix disabling reactions
+- Fix custom page editor not having Source tab
+- Change exif to full requirement
+- Fix registration username required message in some situations
+- Use generic Minecraft query exception
+- Fix date issue when updating forum latest post/topic
+- Prevent editing own secondary groups without permission
+- Add topic + post counts as global variables
+- Add topic label to news posts
+- Don't save last page if maintenance mode is disabled
+- Don't set register page as last page
+- Fix subdirectory profile page banner issue
+- Fix online users widget issue
+- Improve registration nickname label
+- Improve login username label
+- Fix registration nicknames not working
+- Add topic placeholders
+- Use new external server query
+- Add "Show nickname instead of username" option to online users widget
+- Add statistics widget
+- Fix user punishment alert
+- Remove config path issues on user settings page
+- Fix navigation error
+- Fix rewrite test in installer
+- Add forum title variable to view topic template
+- Fix error when replying to a topic that at least 1 user is following
+- Remove unneeded panel template files
+- Update CKEditor
+- Add user title variable to online staff + users widgets
+- Change front end editor
+- Add author IDs to messaging template variables
+- Auto enable some widgets on installation
+- Update getSelfURL to detect HTTPS more reliably
+- Add ability to upload + choose new homepage banner
+- Order parent forum dropdown
+- Allow switching a forum between forum + category
+- Add installer converter support
+- Add ability to switch panel template
+- Fix broken icon
+- Add ability to upload custom profile banners
+- Fix incorrect last online date for users registered through the API
+- New default template
+- Only show PM suggested user list after 3 characters typed
 
-1.0.5
-- Allow disabling Play and Forums
-- Add Slovak language
-- Add Norsk language
-- Add update notice to installer
-- Don't escape navbar item text
-- Prevent requiring pages outside the Nameless directory
-- Change input type submit to buttons
-- Display staff applications in wells
-
-1.0.6
-- Fix Vote page redirecting with a custom language
-- Add French language
-- Add Maintenance page
-- Add Dutch language
-- Add missing language support to 404 page and forum maintenance page
-- Change "Online" status on profiles from server status to forum status
-- Display Parent forums in table view
-- Allow cancelling new replies
-- Allow changing font colours in signatures
-- Update Spanish translation
-- Fix quoting posts containing apostrophes
-- Add missing translations
-- Allow custom icons in navbar
-- Add code insertion to editor
-
-1.0.7
-- Fix null Group HTML error
-- Don't check if admin account is valid MC account
-- Allow cancelling reporting posts
-- Remove Minecraft username check in Admin Users tab
-- Fix editing posts not having any labels selected
-- Fix undefined Smarty variable
-- Fix ampersand not displaying correctly
-- Change config double quotes to single quotes
-- Fix undefined language variable in password reset
-- Fix extra pagination page being displayed
-- Fix 0th page displaying in pagination
-- Fix display issues with floating content
-- Set email charset as UTF-8
-- Add Finnish language
-- Allow users to update their Minecraft usernames
-- Update Norsk language
-- Fix Admin core page redirect
-- Fix tagging alert issue
-- Fix footer navigation array for addons
-- Enable "More" dropdown in navbar
-- Fix avatars not uploading
-- Change profile image size to 300x300
-- Display custom avatars in navbar
-- Update base directory setting
-- Display group HTML in memberlist
-- Display message if installer couldn't delete itself
-- Modify friend system
-- Display custom avatars in Members list
-- Allow functionality if cache is not present
-- Fix Paper theme Jumbotron font colour
-- Update profile system
-
-1.0.8
-- Add missing icons to navbar
-- Update friend/follower avatars on profile page
-- Add thumbs up icon to likes on profile page
-- Add permission check to latest profile posts
-- Fix profile issue for unregistered users
-- Add custom DB class
-- Add Infractions addon
-- Allow deleting all server query errors
-- Remove requirement for location and birthday
-- Separate user likes on profile pages
-- Prevent modifying root user
-- Add support for Discord widget
-- Fix infinite loop on profile pages
-
-1.0.9
-- Fix $p undefined error when pointing to a specific post
-- Display Infractions config permissions error
-- Fix Infractions usernames not displaying
-- Move page title to header
-- Check if Members addon is enabled before displaying the member list
-- Add XenForo converter
-- Remove PHP short tags from pagination rendering
-- Fix oversized friend avatars
-- Add continuous private message system
-- Fix Infractions pagination issue
-- Automatically mark alerts as read
-- Fix Donate sync issue
-- Update Norsk language
-- Add Portuguese translation
-- Fix Infractions undefined offset error
-- Fix potential directory separator issues
-- Add two factor authentication
-- Add custom infraction database prefixes
-- Fix private messaging date issues
-- Fix QR cURL error
-
-1.0.10
-- Allow TeamSpeak links
-- Add staff list to Members addon-
-- Update translations
-- Remove .php extension from installer URL
-- Fix staff app language and CSS issue
-- Allow configuring PHPMailer SMTPAuth variable
-- Fix ampersand page title issue
-- Fix variable typo on index page
-- Improve appearance of forum permissions
-- System to support different types of forums, currently categories and discussion forums
-- Update readme contributors
-- Fix inconsistent Minecraft avatar variable value
-- Allow custom mod sidebar links
-- Fix SQL error whilst editing posts
-- Fix installer issue
-- Issue template added
-- Fix alerts redirecting to white screen
-- Don't purify user group HTML field
-- Add support for Ban and Mute plugin for Infractions
-- Add instructions within email.php
-- Add cancel button whilst editing a post
-- Fix no PM alerts for replies
-- Fix incorrect warning on Infractions settings page
-- Fix addon nav tabs not displaying as active
-- Fix potential 404 error on phpinfo page
-- Allow use of colours in private messages
-- Fix issues with Minecraft banner
-- Remove unnecessary Smarty variable from homepage
-- Cache TeamSpeak query and add Join button
-- Allow editing email settings from AdminCP
-
-1.0.11
-- Move datepicker to below input box
-- Fix Darkly theme category dark text
-- Fix inability to edit root user in AdminCP
-- Disable debug messages from mailer
-- Update translations
-- Add BRL currency to Donate addon
-- Update custom pages system
-- Release first API
-- Add a "report closed" label
-- Remove unnecessary database columns
-- Add share social media buttons
-- Fix blue name on blue background on reports page
-- Disable MCStock option in Donate addon
-- Modify tachometer function
-- Decrease minimum username length in AdminCP to 3 characters
-- Fix non-25565 port not showing on Play page
-- Fix link issue with usernames containing spaces
-- Improvements to forum permissions
-- Fix non-25565 port not showing on banner
-- Don't delete PM altogether if author
-- Assign more topic related Smarty variables
-- Add theme-color meta tag
-- Add IRC to readme
-- Change add/remove friend button to follow/unfollow
-- Add JSON headers to API
-- Make the disable avatar button more intuitive
-- Fix profile pagination issue
-- Remove successful email confirmation
-- Add Name History to profile pages
-- Update to new Twitter widget system
-- Remove Twitter widget ID input
-- Fix syntax error in language file
-- Add Infractions link for admins to dropdown
-- Prevent banning root user
-- Add well element to Infractions page
-- Allow changing Minecraft avatar type
-- Alert profile owners on wall posts
-- Add drop column function
-- Allow enabling/disabling custom usernames
-
-1.0.12
-- Add wells to profile page tabs
-- Add Minecraft account association
-- Allow use of wells on custom pages
-- Fix Twitter feed issues
-- Fix email config issue
-- Reinstate cookie notice
-- Update issue template to 1.0.12
-- Update translations
-- Add announcement system
-- Add user titles
-- Add option to change Twitter feed style
-- Add BungeeUtilisals support
-- Prevent users from liking their own profile wall posts
-- Allow HTML use in profile wall posts
-- Fix database issues with donate addon
-- Add modify column function
-
-1.0.13
-- Only show .panel-body with subforums if $parent.forums > 0
-- Removed syntax error in Dutch language translation
-- Fix incorrect setting name in installer
-- Update Dutch translation
-- Update German translation
-- Update Portuguese translation
-- Removed HTTPS port from Twitter sharing
-- Fix Twitter widget height
-- Add voice server port to TeamSpeak join button
-- Fix incorrect topic view count
-- Display correct number of replies in news section
-- Add Twitter URL warning for EnglishUK language
-- Allow panels in custom page editor
-- Add support for offline Ban Management players in Infractions addon
-- Display Followers/Following instead of Friends within UserCP if enabled
-- Don't alert the user if they're posting on their own wall
-- Fix null UUID on manual user creation
-- Fix multiple search issues, including deleted posts being shown
-- Fix "1 hours ago" grammar
-- Ensure API registrations have unique usernames
-- Change scroll destination for post selection
-- Fix unresponsive videos on homepage
-- Hide Social column on front page if empty
-- Allow deleting "broken" posts directly from search
-- Update readme contributors
-- Fix EnglishUK language syntax error
-
-1.0.14
-- Add webchat and Discord links to readme
-- Prevent forum index from counting deleted posts
-- Fix replies not being deleted after topic deletion
-- Update Dutch translation
-- Update German translation
-- Update Norsk translation
-- Update Portuguese translation
-- Update Spanish translation
-- Add checks if the user can view staff applications
-- Removed "Top voters list coming soon" from vote page
-- Update author meta tag to site name
-- Allow custom user sidebar links
-- Add Help page
-- Add Ban Appeal addon to core Nameless release
-- Fix Ban Appeal "More" dropdown issue
-- Allow moving Staff Application link location
-- Update Ban Appeal permission check
-- Ensure email is valid for API registration
-- Automatically log user in on first load
-- Add report creation method to API
-- Update ModCP to support ingame reports
-- Update AdminCP Forum permissions issue
-- Fix avatar width issues
-- Prevent viewing files in non-accessible directories
-- Update editor line break method
-- Add signup completion for API register method
-- Remove user's friends on deletion
-
-1.0.15
-- Update API language terms
-- Improve register API method success message
-- Fix Buycraft synchronisation
-- Allow modifying package descriptions within the Donate addon
-- Fix incorrect link following MCAssoc validation
-- Update lower case addon name in link
-- Keep custom package descriptions on donation sync
-- Remove containers from global messages
-- Fix incorrect custom avatar size in forums
-- Update plugin link within AdminCP Help page
-- Add getNotifications method to API
-- Add updateUsername method to API
-- Update included library
-
-1.0.16
-- Prevent directory listing with htaccess
-- Enable native spellchecker in editor
-- Update translations
-- Add Chinese translation
-- Allow use of \n character in report content
-- Add ability to customise custom page icons
-- Display global messages in a container
-- Fix signin issue with numeric useranmes
-- Remove extra line from admin forum list
-- Remove redundant <ul> from navbar links
-- Fix MySQL error upon user creation through AdminCP
-- Update Gravatars to use https
-- Fix smileys not being HTTPS compatible
-- Allow non-3306 database ports
-- Prevent admin account switch in AdminCP
-- Remove IRC link from readme
-- Add user group to news template array
-- Fix issue with email config password resetting
-- Allow changing link location of all included addons
-- Update Infractions addon to cache infractions, and add AdvancedBan support
-- Fix AdminCP user update issue
-- Add API function to check valid connection
-- Fix staff application "More" dropdown link
-- Update admin Infractions link in user dropdown
-- Update invalid token handling during topic submission
-- Forum index and topic deletion fixes
-- Add notice when registration is disabled
-
-1.0.17
-- Add Japanese translation
-- Update Chinese translation
+2.0.0 pr-7
+- Add Italian translation
 - Update Czech translation
 - Update Dutch translation
-- Update French translation
-- Update Norwegian translation
-- Update Portuguese translation
-- Update Slovak translation
-- Move AdminCP container location
-- More efficient way of using Options in .htaccess
-- Delete unused 1920x1080 background image
-- Fix AdvancedBan label issue
-- Display website name on 404 page title
-- Integrate Infractions tab into profile pages
-- Update Infractions addon for profile pages
-- Allow toggling name history on profile pages
-- Fix loading invalid addons
-- Add BugReport addon
-- Update help page
-- Update Superhero theme
-- Add temp warning AdvancedBan integration to Infractions addon
-- Update vote addon to allow for > 8 voting sites without visual glitches
-- Fix broken API popover in AdminCP
-- Add error messages to BanAppeal and BugReport addons
-- Add error messages to staff application module
-- Fix validate error on vote addon
-- Update nginx example configs
-- Update email headers
-- Add CraftingStore support to Donate addon
-- Fix incorrect UserCP follower count
-- Add example Donate addon cron command
-
-1.0.18
-- Update issue template and readme
-- Update Dutch translation
 - Update German translation
-- Update Japanese translation
+- Update Lithuanian translation
+- Update Norwegian translation
+- Update Polish translation
 - Update Portuguese translation
-- Add secondary group
-- Swap place and colour of signin and register buttons
-- Fix grammar on homepage if 1 player is online
-- Add word-wrap to .forum_post
-- Apply .forum_post to homepage announcements
-- Update MinecraftMarket integration
-- Ensure route is =lowercase
-- Ensure UUID is never null
-- Update secondary groups
+- Update Romanian translation
+- Update Spanish translation
+- Fix search bar showing in wrong place if no topics in forum
+- Default Revamp template CSS tweaks
+- Remove unused condition in Default Revamp navbar template file
+- Fix Default Revamp delete post button
+- Fix Default Revamp delete profile post button
+- Fix broken topic breadcrumb link
+- Add missing panel template creation to updater
+- Navbar icons updated to Font Awesome 5
+- Default Revamp navbar updates
+- Fix incorrect last online date for users registered through the legacy v1 API
+- Update Default Revamp remember me label
+- Update Default template thumbtack icon
+- Add support for custom plural forms in languages
+- Remove : appearing after server IP if port is empty
+- Prevent infinite parent forum configuration loop
+- Fix plural form not working in some cases for time phrases
+- Fix Default template broken edit button icon
+- Update Discord widget description
+- Fix pre setup widgets and banner on new installations
+- Fix Default Revamp alerts page title
+- Fix recaptcha not showing in Default Revamp template
+- Fix latest posts sometimes showing duplicates
+- Switch Default Revamp authme templates around
+- Remove API debug line
+- Switch registration validation around
+- Fix timezones for reports
+- Hide staff groups for "post validation group"
+- Add terms + conditions to complete signup
+- Allow redirect custom pages to be accessed directly
+- Fix guests not being able to view redirect pages directly
+- Add API method to return list of usernames + their UUIDs
+- Add banned and active to listUsers response
+- Allow use of forgot password in maintenance mode
+- Editor updates
+- Prevent editor modifying inserted URLs automatically
+- Assign logged-in user title
+- Add view all panel templates link variable
+- Add www to getSelfURL if force www is enabled and www is not in hostname
+- Allow editing root user's secondary groups
+- Fix non-friendly URL sitemap generation
+- Fix widget configuration alignment and text
+- Add multiple groups to the profile page
+- Prevent fatal error if Mojang API query returns null
+- Remove Default Revamp template credits
+- Add support for Twitter cards
+- Change topic cancellation buttons to yes/no
+- Redirect to StaffCP Forums overview when updating a forum
+- Bring forum search in line with forum title
+- Add categories to move topic dropdown
+- Change API URL to non-friendly URL
+- Add option to display IP address for each server on status page
+- Fixed fids and gids being too small in forum_topic_labels table
+- Add support for Twitter cards in Default Revamp template
+- Inline item content in online staff widget
+- Make avatar clickable in view topic template
+- Don't show topic count/latest topic info for redirect forums
+- Include subforums in move topic dropdown
+- Add UUID to forum post variables
+- Remove old code
+- Add ability to use multiple webhooks
+- Add last seen, online to view topic and subforum descriptions to view forum
+- Fix MentionsParser
+- Remove avatars with different extensions and add timestamp to prevent caching issues
+- Escape avatar updated variable just in case
+- Fix default group potentially breaking when creating a new group
+- Fix API verification issue
+- Prevent re-querying for permission checks
+- Fix Default Theme nav style issue
+- Fix names with special characters having no avatar
+- Sort groups in order
+- Add int check to DB Custom bind param
+- Allow explicitly setting pagination values
+- Only show email notice in StaffCP with permission
+- Stop cookie notice automatically closing
+- Add reCAPTCHA to login screen
+- Add 403 page
+- Add more variables to Statistics widget
+- Fix More dropdown only showing if a custom page is adding to it
+- Add ability for template to define a settings page
+- Add per-user template support
+- Prevent fatal error with insufficient forum permissions
+- Allow changing group username colour from text input
+- Add login link to maintenance mode page
 
-1.0.19
-- Fix invalid API keys
-- Fix text overflow on donate package descriptions
-- Add htaccess files to core directory
+2.0.0 pr-8
+- Many bugfixes
+- Add Discord rank sync
+- Add Chinese (Simplified), French, Russian, Spanish (ES) and Turkish translations
+- Update existing translations
+- New user/group systems - mostly backend changes
+- API rework - modules can now register custom endpoints
+- New widget location - can choose between left + right hand side
+- Remove legacy v1 API
+- Add basic custom page feature - no navbar/footer
+- Add ability to open custom page in new tab
+- Remove old Default template
+- Fix same-site redirect forums showing redirect warning
+- Add "topics following" page
+- Add email content editor
+- Add mass emailing
+- Add ability to receive emails for followed topic updates
+- Add required custom profile fields to registration page
+- Add announcement system
+- New installer
+- Update StaffCP users list table to be async
+- Add ability to specify rel, as, onload attributes for CSS and defer, async attributes for JS
+- Discord topic webhook improvements
+- Remove dropdowns from DefaultRevamp template mobile sidebar
+- Start PHP 8 compatibility - still a work in progress
+- Fix MCAssoc integration
+- Add server status widget
+- Add latest profile post widget
+- Add ability to change "More" dropdown message
+- Add force 2FA option
+- Multiple webhook support
+- Add highlighting to profile post links
+- Add ability to add CSS to group usernames
+- Allow specifying "Can view other users' topics" forum permission for guests
+- Add hCaptcha
 
-1.0.20
-- Add example web.config
-- Fix mcassoc instance key not saving
-- Add Italian translation
-- Update Czech, Dutch, Finnish, Japanese and Portuguese translations
-- Remove register follow location cURL option
-- Add scripts to AdminCP Help page
-- Change AdvancedBan table names to uppercase
-- Add Dutch translation to Ban Appeal addon
-- Optimise images
-- Remove mcrypt requirement
-- Update installer requirements
-- Add panels to forum templates
-- Add default order value for CraftingStore integration
-- Fix signin details being remembered if tfa is cancelled
-- Update 404 and forum maintenance mode back buttons to work on Safari
-- Automatically load addon languages
+2.0.0 pr-9
+- Add new panel template
+- Add Default Revamp settings including dark mode
+- Add player heads to server status widget
+- Add ability to re-order servers in play tab
+- Add announcement HTML support
+- Add ability to search for users by email address in StaffCP
+- Add ability to resend validation email
+- Add ability to set default labels for forums
+- Add option to use Gravatar
+- Add concept of module dependencies
+- Add getActivePage method
+- Add new SEO page including Google Analytics integration
+- Add drag ordering for groups and Minecraft servers
+- Translation updates
+- Fix multibyte character string length checks
+- Fix widgets intended for homepage showing on all pages
+- Fix validateUser hook sending empty Discord message
+- Fix API endpoints
+- Fix latest profile posts widget profile links
+- Fix API URL adding two http prefixes
+- Fix StaffCP Registration settings not submitting
+- Fix webhooks listing twice
+- Fix API URL in StaffCP API tab having leading/trailing whitespace
+- Fix group_id column error upon registration and AuthMe linking
+- Fix StaffCP sidebar link conflicts
+- Fix error if user has no group
+- Make groups field in serverInfo endpoint optional
+- PHP 8 improvements
+- Full changeset https://github.com/NamelessMC/Nameless/compare/v2.0.0-pr8...v2.0.0-pr9
 
-1.0.21
-- Update Italian translation
-- Add basic user template variables
-- Use v4 API for CraftingStore
-- Remove MinecraftMarket integration
-- Ensure reputation user exists
-- Update DB class
-- Update htmlspecialchars calls
+2.0.0 pr-10
+- Add ability to upload favicon
+- Add Smarty security policy
+- Add support for environment variable based debugging
+- Auto detect user timezone when registering
+- Avatar rework and add Crafthead support
+- Captcha rework including Recaptcha v3 invisible support
+- Ensure cookie_secure is set in PHP config
+- Error handling revamp
+- Increase label HTML length
+- Move captcha/https/www configuration to config.php
+- Placeholder API integration
+- Remove unsafe tags when editing posts
+- Validation revamp
+- API updates - including group sync fixes
+- Default Revamp and Default panel template fixes
+- htaccess fixes and improvements
+- MCAssoc fixes
+- Server status widget fixes
+- Translation updates
+- PHP 8 improvements
+- Full changeset https://github.com/NamelessMC/Nameless/compare/v2.0.0-pr9...v2.0.0-pr10
+
+2.0.0 pr-11
+- Add Danish translation
+- Fix StaffCP Minecraft integration section
+- Add support for upward dropdowns in Default Revamp template
+- Add Default Revamp dark mode support for top attached headers
+- Fix invalid language during installation
+- Add SSL check before activating secure cookies
+- Fix missing favicons directory
+- Fix invalid token with AuthMe login
+- Add setting to initialise charset
+- Add environment variables to hide options in general configuration
+- Validate email port before updating config in StaffCP
+- Add method to set multiple config values at once
+- Temporarily disable auto timezone detection until #2355 is resolved
+- Change placeholder tables primary keys
+- Fix profile settings when forum is disabled
+- Add index on nl2_posts topic_id column
+- Remove extra column from nl2_query_results
+- Improve placeholder error message
+- Translation updates
+- PHP 8 improvements
+- Full changeset https://github.com/NamelessMC/Nameless/compare/v2.0.0-pr10...v2.0.0-pr11
+
+2.0.0 pr-12
+- Add Thai translation
+- Increase max length of custom pages URL + title
+- Display non-alphanumeric characters in forum URLs
+- General placeholder fixes
+- General Authme fixes
+- Convert many GET requests to POST #2033
+- Add new administrator permission for full access
+- Add new forum settings page including link location option
+- Add ability to log in with either username or email
+- Discord sync rework
+- Ingame sync rework
+- Fix legacy panel template update alert style
+- Only send password reset email if user is already active
+- PHPMailer autoloader PHP 8 compatibility
+- Fix warning modal not showing
+- Prevent IP banning yourself
+- Allow disabling placeholders feature
+- Remove legacy X-UA-Compatible header
+- Prevent showing validate message when API verification is disabled
+- Update strings for Discord slash commands
+- API verification command renamed from /validate to /verify
+- Change installer DB password field to password type
+- Fix latest profile posts link
+- Fix duplicate rel="" attribute when using rel="preload"
+- Make hook fire even if no hooks are there
+- Remove password length limit
+- Convert forum queries to DB query()
+- Add notice to StaffCP update tab if not using PHP 7.4+
+- Add per-user dark mode toggle
+- Only clear 2fa state when not on 404 page
+- Fix StaffCP redirect after re-authentication
+- Add reported_username and reported_uid fields to createReport endpoint
+- Exclude .DS_Store files from endpoint scan
+- Default Revamp dark mode improvements
+- Default panel template dark mode improvements
+- Translation updates
+- PHP 8 improvements
+- Full changeset https://github.com/NamelessMC/Nameless/compare/v2.0.0-pr11...v2.0.0-pr12

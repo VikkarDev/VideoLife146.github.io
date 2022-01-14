@@ -5,7 +5,7 @@
  * https://github.com/Shadowwolf97/Minecraft-UUID-Utils
  *
  * Modified by Samerton for NamelessMC
- * https://github.com/samerton/NamelessMC
+ * https://github.com/NamelessMC/Nameless
  */
 
 class MinecraftProfile {
@@ -64,7 +64,7 @@ class ProfileUtils {
             $identifier = ProfileUtils::getUUIDFromUsername($identifier, $timeout);
             $url = "https://sessionserver.mojang.com/session/minecraft/profile/".$identifier['uuid'];
         } else {
-            $url = "https://sessionserver.mojang.com/session/minecraft/profile/".$identifier;
+            $url = "https://sessionserver.mojang.com/session/minecraft/profile/" . $identifier;
         }
 
 		// Use cURL instead of file_get_contents
