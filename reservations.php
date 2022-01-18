@@ -1,7 +1,7 @@
 <html>
   <head>
     <title> Reservations - videolife146.com </title>
-    <link rel="stylesheet" href="/css/reservations.css">
+    <link rel="stylesheet" href="css/reservations.css">
     
   </head>
   <body>
@@ -13,7 +13,7 @@
     <nav>
       <div class="logo">videolife146</div>
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="index.php">Home</a></li>
       </ul>
     </nav>
     <div class="copyright_footer">

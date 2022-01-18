@@ -1,7 +1,7 @@
 <html>
   <head>
       <title>Error - videolife146.com</title>
-      <link rel="stylesheet" href="/css/errorstyle.css">
+      <link rel="stylesheet" href="css/errorstyle.css">
   </head>
     <body>
         
