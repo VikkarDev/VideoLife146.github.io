@@ -1,13 +1,13 @@
 /* Root Stuff */
 
 :root {
-    --pink: #F34C9A;
+    --pink: #2478c5;
 }
 
 body {
     text-align: center;
     margin: 0px;
-    background: url(images/bg-3.png) no-repeat center center fixed; 
+    background: url(images/bg-1.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
