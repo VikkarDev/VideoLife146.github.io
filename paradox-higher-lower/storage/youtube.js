@@ -60,10 +60,38 @@ function resetYTVids() {
         },
         {
             "title": "FUNNIEST RP Game Ever? ROLEPLAY as Sweden!",
-            "id": "hizoEavk8wo",
+            "id": "AfbOel3jpbY",
             "date": "2021-04-22T07:01:43Z",
-            "thumbnail": "https://i.ytimg.com/vi/hizoEavk8wo/sddefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/AfbOel3jpbY/sddefault.jpg",
             "views": "88"
+        },
+        {
+            "title": "When you accidentally delete your whole fleet to get enough manpower for 1 ship in HOI4 MP😭😱 #shorts",
+            "id": "8YLOLVjwXYw",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/8YLOLVjwXYw/sddefault.jpg",
+            "views": "18937"
+        },
+        {
+            "title": "Hiter Has A “Stroke” In HOI4 RP",
+            "id": "YNp2MT3OI1Q",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/YNp2MT3OI1Q/sddefault.jpg",
+            "views": "268"
+        },
+        {
+            "title": "I`m Gay Lisa It`s Over",
+            "id": "pwJErUenXaw",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/pwJErUenXaw/sddefault.jpg",
+            "views": "242650"
+        },
+        {
+            "title": "HOI4: When you almost close an encirclement in HOI4 Multiplayer",
+            "id": "YhvCEzQyeHI",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/YhvCEzQyeHI/sddefault.jpg",
+            "views": "510"
         },
     ]
 }
