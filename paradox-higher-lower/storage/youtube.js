@@ -49,14 +49,14 @@ function resetYTVids() {
             "id": "hizoEavk8wo",
             "date": "2021-04-22T07:01:43Z",
             "thumbnail": "https://i.ytimg.com/vi/hizoEavk8wo/sddefault.jpg",
-            "views": "130"
+            "views": "132"
         },
         {
             "title": "SO I 1v1'd MY STREAM",
             "id": "wzMf77ROUYc",
             "date": "2021-04-22T07:01:43Z",
             "thumbnail": "https://i.ytimg.com/vi/wzMf77ROUYc/sddefault.jpg",
-            "views": "116"
+            "views": "117"
         },
         {
             "title": "FUNNIEST RP Game Ever? ROLEPLAY as Sweden!",
@@ -92,6 +92,34 @@ function resetYTVids() {
             "date": "2021-04-22T07:01:43Z",
             "thumbnail": "https://i.ytimg.com/vi/YhvCEzQyeHI/sddefault.jpg",
             "views": "510"
+        },
+        {
+            "title": "Can YOU Save Germany In Stalingrad!? - HOI4 Challenge Scenario",
+            "id": "HFKkIgF5jg4",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/HFKkIgF5jg4/maxresdefault.jpg", 
+            "views": "191212"
+        },
+        {
+            "title": "Sus Intro",
+            "id": "yxE32p45J5Y",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/yxE32p45J5Y/maxresdefault.jpg", 
+            "views": "13505"
+        },
+        {
+            "title": "[HOI4] When You Play Third Reich for the First Time",
+            "id": "0yXqBLvESYk",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/0yXqBLvESYk/maxresdefault.jpg", 
+            "views": "2019803"
+        },
+        {
+            "title": "(HOI4) Factions in a Nutshell",
+            "id": "Oqk8ShwvmTI",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/Oqk8ShwvmTI/maxresdefault.jpg", 
+            "views": "9214875"
         },
     ]
 }
