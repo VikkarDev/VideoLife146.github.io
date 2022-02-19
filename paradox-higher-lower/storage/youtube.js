@@ -38,18 +38,32 @@ function resetYTVids() {
             "views": "77"
         },
         {
-            "title": "Using Magnus Carlsen to CHEAT in Chess",
-            "id": "zdsdEVngg7Y",
+            "title": "GERMAN REACTS TO OVERSIMPLIFIED THE FALKLANDS - MINIWARS #1 | #SeemopsREACTION",
+            "id": "RE6HNfcq0us",
             "date": "2021-04-22T07:01:43Z",
-            "thumbnail": "https://i.ytimg.com/vi/zdsdEVngg7Y/sddefault.jpg",
-            "views": "1176672"
+            "thumbnail": "https://i.ytimg.com/vi/RE6HNfcq0us/sddefault.jpg",
+            "views": "2248"
         },
         {
-            "title": "WE STAND ALONE! FORTRESS SWITZERLAND VERSUS THE WORLD! - HOI4 Multiplayer",
-            "id": "fysvfPEHmBw",
+            "title": "LOSING AS AC HUNGARY ft. SeeMops",
+            "id": "hizoEavk8wo",
             "date": "2021-04-22T07:01:43Z",
-            "thumbnail": "https://i.ytimg.com/vi/fysvfPEHmBw/sddefault.jpg",
-            "views": "771319"
+            "thumbnail": "https://i.ytimg.com/vi/hizoEavk8wo/sddefault.jpg",
+            "views": "130"
+        },
+        {
+            "title": "SO I 1v1'd MY STREAM",
+            "id": "wzMf77ROUYc",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/wzMf77ROUYc/sddefault.jpg",
+            "views": "116"
+        },
+        {
+            "title": "FUNNIEST RP Game Ever? ROLEPLAY as Sweden!",
+            "id": "hizoEavk8wo",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/hizoEavk8wo/sddefault.jpg",
+            "views": "88"
         },
     ]
 }
