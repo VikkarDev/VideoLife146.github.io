@@ -21,7 +21,7 @@ function resetYTVids() {
             "id": "ZNL-0AojizM",
             "date": "2021-04-28T06:42:53Z",
             "thumbnail": "https://img.youtube.com/vi/ZNL-0AojizM/maxresdefault.jpg",
-            "views": "2300"
+            "views": "2410"
         },
         {
             "title": "NATO Has Entered The Chat",
@@ -120,6 +120,55 @@ function resetYTVids() {
             "date": "2021-04-22T07:01:43Z",
             "thumbnail": "https://i.ytimg.com/vi/Oqk8ShwvmTI/maxresdefault.jpg", 
             "views": "9214875"
+        },
+        {
+            "title": "This 1938 USA Disaster Save Was In A Terrible Situation",
+            "id": "SPERrmY3X0o",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/SPERrmY3X0o/maxresdefault.jpg", 
+            "views": "200596"
+        },
+        {
+            "title": "Streamer Roleplays A Woman",
+            "id": "GaPnukRrhiQ",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/GaPnukRrhiQ/maxresdefault.jpg", 
+            "views": "19019"
+        },
+        {
+            "title": "We Are Pregnant Boys!",
+            "id": "NZJ3jpc5iKs",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/NZJ3jpc5iKs/maxresdefault.jpg", 
+            "views": "133167"
+        },
+        {
+            "title": "HOI4 The International Community Protests....",
+            "id": "CYiwrXfIpmU",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/CYiwrXfIpmU/maxresdefault.jpg", 
+            "views": "428"
+        },
+        {
+            "title": "When Tommy Plays Japan In HOI4 Multiplayer...",
+            "id": "uteIQLG8LMA",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/uteIQLG8LMA/maxresdefault.jpg", 
+            "views": "282075"
+        },
+        {
+            "title": "Not Like 9/11",
+            "id": "P08t5f9FfbU",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/P08t5f9FfbU/maxresdefault.jpg", 
+            "views": "930127"
+        },
+        {
+            "title": "Spooky Hoi4 Mods",
+            "id": "vVqvSdBWT8s",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/vVqvSdBWT8s/maxresdefault.jpg", 
+            "views": "15752"
         },
     ]
 }
