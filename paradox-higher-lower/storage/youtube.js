@@ -170,5 +170,40 @@ function resetYTVids() {
             "thumbnail": "https://i.ytimg.com/vi/vVqvSdBWT8s/maxresdefault.jpg", 
             "views": "15752"
         },
+        {
+            "title": "When You Play Israel In Hearts Of Iron 4...",
+            "id": "IA6HuGX64Jg",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/IA6HuGX64Jg/maxresdefault.jpg", 
+            "views": "189741"
+        },
+        {
+            "title": "THEY BANNED THIS COUNTRY FROM HOI4 MULTIPLAYER BECAUSE OF ME! THIS COUNTRY IS TOO BROKEN! - HOI4 MTG",
+            "id": "frcNPEQQ8CM",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/frcNPEQQ8CM/maxresdefault.jpg", 
+            "views": "843580"
+        },
+        {
+            "title": "I'm Right Wing",
+            "id": "cPJ8UQUPwh8",
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/cPJ8UQUPwh8/maxresdefault.jpg", 
+            "views": "244419"
+        },
+        {
+            "title": "Teaching a Girl Hearts of Iron 4",
+            "id": "kwdsykngYbE", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/kwdsykngYbE/maxresdefault.jpg", 
+            "views": "45770"
+        },
+        {
+            "title": "[HOI4] POV: YOURE GERMANY",
+            "id": "HnWZnUWgwww", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/HnWZnUWgwww/maxresdefault.jpg", 
+            "views": "6196237"
+        },
     ]
 }
