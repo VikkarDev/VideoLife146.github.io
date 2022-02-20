@@ -63,7 +63,7 @@ function resetYTVids() {
             "id": "AfbOel3jpbY",
             "date": "2021-04-22T07:01:43Z",
             "thumbnail": "https://i.ytimg.com/vi/AfbOel3jpbY/sddefault.jpg",
-            "views": "88"
+            "views": "90"
         },
         {
             "title": "When you accidentally delete your whole fleet to get enough manpower for 1 ship in HOI4 MP😭😱 #shorts",
@@ -203,7 +203,35 @@ function resetYTVids() {
             "id": "HnWZnUWgwww", 
             "date": "2021-04-22T07:01:43Z",
             "thumbnail": "https://i.ytimg.com/vi/HnWZnUWgwww/maxresdefault.jpg", 
-            "views": "6196237"
+            "views": "6196255"
+        },
+        {
+            "title": "Ultra Germany vs Everyone - HOI4 Timelapse",
+            "id": "tl4FAb8A0FY", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/tl4FAb8A0FY/maxresdefault.jpg", 
+            "views": "1577026"
+        },
+        {
+            "title": "Hearts of Iron IV: No Step Back | Pre-Order Trailer",
+            "id": "p26A0H3IoO4", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "https://i.ytimg.com/vi/p26A0H3IoO4/maxresdefault.jpg", 
+            "views": "1120460"
+        },
+        {
+            "title": "30 Years since collapse of the Soviet Union",
+            "id": "BnsEatdxMDc", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "http://i3.ytimg.com/vi/BnsEatdxMDc/hqdefault.jpg", 
+            "views": "51527"
+        },
+        {
+            "title": "I Added Dating Mechanics to Hoi4...",
+            "id": "fTvlbjlJKaw", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "http://i3.ytimg.com/vi/fTvlbjlJKaw/hqdefault.jpg", 
+            "views": "65307"
         },
     ]
 }
