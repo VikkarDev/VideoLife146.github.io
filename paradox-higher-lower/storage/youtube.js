@@ -233,5 +233,12 @@ function resetYTVids() {
             "thumbnail": "http://i3.ytimg.com/vi/fTvlbjlJKaw/hqdefault.jpg", 
             "views": "65307"
         },
+        {
+            "title": "Japan goes Communist and conquers Everyone",
+            "id": "4lHooXRkdv0", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "http://i3.ytimg.com/vi/4lHooXRkdv0/hqdefault.jpg", 
+            "views": "105292"
+        },
     ]
 }
