@@ -14,7 +14,7 @@ function resetYTVids() {
             "id": "xbkhyCgLyYo",
             "date": "2021-06-06T06:59:09Z",
             "thumbnail": "https://img.youtube.com/vi/xbkhyCgLyYo/maxresdefault.jpg",
-            "views": "89"
+            "views": "90"
         },
         {
             "title": "Mr Incredible Becoming Canny | Eastern Front | HOI4 MEME",
