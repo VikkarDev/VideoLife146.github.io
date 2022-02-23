@@ -21,7 +21,7 @@ function resetYTVids() {
             "id": "ZNL-0AojizM",
             "date": "2021-04-28T06:42:53Z",
             "thumbnail": "https://img.youtube.com/vi/ZNL-0AojizM/maxresdefault.jpg",
-            "views": "2410"
+            "views": "4612"
         },
         {
             "title": "NATO Has Entered The Chat",
