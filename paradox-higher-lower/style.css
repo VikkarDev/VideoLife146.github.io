@@ -1,7 +1,7 @@
 /* Root Stuff */
 
 :root {
-    --pink: #1263af;
+    --pink: #2678C5;
 }
 
 body {
@@ -34,7 +34,7 @@ button {
 }
 
 button:hover {
-    color: #752F57;
+    color: #2678C5;
     background-color: white;
 }
 
