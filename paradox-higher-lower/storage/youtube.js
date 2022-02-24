@@ -240,5 +240,19 @@ function resetYTVids() {
             "thumbnail": "http://i3.ytimg.com/vi/4lHooXRkdv0/hqdefault.jpg", 
             "views": "105292"
         },
+        {
+            "title": "Kaiser Gets Naval Invaded By Russia In This Disaster",
+            "id": "hMa0g3n9mJU", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "http://i3.ytimg.com/vi/hMa0g3n9mJU/hqdefault.jpg", 
+            "views": "67086"
+        },
+        {
+            "title": "WHAT HAPPENS WHEN TOMMY PLAYS TURKEY IN A HOI4 ROLEPLAY GAME!? - HOI4 Multiplayer",
+            "id": "sD2he9Tx3VQ", 
+            "date": "2021-04-22T07:01:43Z",
+            "thumbnail": "http://i3.ytimg.com/vi/sD2he9Tx3VQ/hqdefault.jpg", 
+            "views": "948710"
+        },
     ]
 }
