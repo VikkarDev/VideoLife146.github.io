@@ -50,7 +50,7 @@
 
         .social-icon {
             display: inline-block;
-            background-color: #008CBA;
+            background-color: #4CAF50;
             color: #fff;
             padding: 10px;
             margin: 5px;
@@ -61,23 +61,22 @@
         }
 
         .social-icon:hover {
-            background-color: #005580;
+            background-color: #4CAF50;
         }
 
         .season-button {
-            display: block; /* Change display to block to make full-width */
-            background-color: #008CBA;
+            display: block;
             color: #fff;
             padding: 10px;
             margin: 5px;
             border: none;
-            text-decoration: none;
+            text-decoration: underline;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: color 0.3s;
         }
 
         .season-button:hover {
-            background-color: #005580;
+            color: #00ff00; /* Change color on hover */
         }
 
         #current-season-button {
@@ -97,32 +96,24 @@
 </head>
 <body>
 
-    <h1>All Seasons</h1>
+    <h1>VGL</h1>
 
     <div class="container">
         <div class="season-container">
             <h2>Current Season:</h2>
-            <!-- Update the button to be functional with an href attribute -->
             <a href="/geo/standings/" class="season-button" id="current-season-button">Current Season</a>
 
             <h2>Archived Seasons:</h2>
             <ul>
-                <li><a href="season1.html" class="season-button">Season 1</a></li>
+                <!-- <li><a href="season1.html" class="season-button">Season 1</a></li> -->
                 <!-- Add more links for each archived season -->
             </ul>
-
-            <div class="league-rules">
-                <h2>League Rules:</h2>
-                <!-- Add your league rules content here -->
-                <p>This is where you can view the league rules for the current season.</p>
-            </div>
         </div>
 
         <div class="footer">
             <h2>Connect with Us</h2>
             <div class="social-media">
-                <a href="#" class="social-icon">Facebook</a>
-                <a href="#" class="social-icon">Twitter</a>
+                <a href="https://discord.com/invite/ReE7mGeXYz" class="social-icon">Discord</a>
                 <!-- Add more social media icons as needed -->
             </div>
         </div>
