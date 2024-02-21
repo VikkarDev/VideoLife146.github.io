@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Season Standings</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0e0e0e;
+            color: #00ff00;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            overflow-x: auto;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #00ff00;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        th {
+            background-color: #000;
+        }
+
+        th.active {
+            background-color: #008CBA;
+        }
+
+        th:active {
+            background-color: #008CBA;
+        }
+
+        .arrow {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        .arrow.up {
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #00ff00;
+        }
+
+        .arrow.down {
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #00ff00;
+        }
+
+        .export-btn {
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Season Standings</h1>
+
+    <table id="standingsTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Team <span id="arrow0" class="arrow"></span></th>
+                <th onclick="sortTable(1)">Games Played <span id="arrow1" class="arrow"></span></th>
+                <th onclick="sortTable(2)" class="active">Points <span id="arrow2" class="arrow"></span></th>
+                <th onclick="sortTable(3)">Games Won <span id="arrow3" class="arrow"></span></th>
+                <th onclick="sortTable(4)">Games Lost <span id="arrow4" class="arrow"></span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add your team standings data here -->
+            <tr>
+                <td>Team 1</td>
+                <td>10</td>
+                <td>24</td>
+                <td>8</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Team 2</td>
+                <td>10</td>
+                <td>18</td>
+                <td>6</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Team 3</td>
+                <td>10</td>
+                <td>20</td>
+                <td>7</td>
+                <td>3</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+
+    <button class="export-btn" onclick="exportTableToCSV('standings.csv')">Export to CSV</button>
+    <button class="export-btn" onclick="takeScreenshot()">Take Screenshot</button>
+
+    <script>
+        var currentColumn = 2; // Default sorting column (Points)
+        var isAscending = true; // Initial sorting order
+
+        // Sort by Points on page load
+        window.onload = function () {
+            sortTable(currentColumn);
+        };
+
+        function sortTable(column) {
+            var table = document.getElementById("standingsTable").getElementsByTagName("tbody")[0];
+            var header = document.getElementsByTagName("th")[column];
+            var arrow = document.getElementById("arrow" + column);
+
+            var rows = Array.from(table.getElementsByTagName("tr"));
+
+            rows.sort(function (a, b) {
+                var aValue = parseInt(a.getElementsByTagName("td")[column].innerText);
+                var bValue = parseInt(b.getElementsByTagName("td")[column].innerText);
+
+                if (currentColumn === column) {
+                    // If it's the current column, reverse the order
+                    return isAscending ? bValue - aValue : aValue - bValue;
+                } else {
+                    // If it's a new column, sort in ascending order
+                    return aValue - bValue;
+                }
+            });
+
+            // Clear existing rows
+            table.innerHTML = "";
+
+            // Append sorted rows
+            for (var i = 0; i < rows.length; i++) {
+                table.appendChild(rows[i]);
+            }
+
+            // Remove active class from all headers
+            var headers = document.getElementsByTagName("th");
+            for (var i = 0; i < headers.length; i++) {
+                headers[i].classList.remove("active");
+            }
+
+            // Remove arrows from all columns
+            var arrows = document.getElementsByClassName("arrow");
+            for (var i = 0; i < arrows.length; i++) {
+                arrows[i].innerHTML = "";
+            }
+
+            // Add active class to the clicked header
+            header.classList.add("active");
+
+            // Add arrow to the sorted column header
+            if (isAscending) {
+                arrow.innerHTML = '<span class="arrow up"></span>';
+            } else {
+                arrow.innerHTML = '<span class="arrow down"></span>';
+            }
+
+            // Update current column and sorting order
+            currentColumn = column;
+            isAscending = !isAscending;
+        }
+
+        function exportTableToCSV(filename) {
+            var csv = [];
+            var rows = document.querySelectorAll("table tr");
+            for (var i = 0; i < rows.length; i++) {
+                var row = [], cols = rows[i].querySelectorAll("td, th");
+                for (var j = 0; j < cols.length; j++) {
+                    row.push(cols[j].innerText);
+                }
+                csv.push(row.join(","));
+            }
+            // Download CSV file
+            downloadCSV(csv.join("\n"), filename);
+        }
+
+        function downloadCSV(csv, filename) {
+            var csvFile;
+            var downloadLink;
+            csvFile = new Blob([csv], {type: "text/csv"});
+            downloadLink = document.createElement("a");
+            downloadLink.download = filename;
+            downloadLink.href = window.URL.createObjectURL(csvFile);
+            downloadLink.style.display = "none";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+        }
+    </script>
+    <script>
+    
+        function takeScreenshot() {
+            var table = document.getElementById("standingsTable");
+    
+            // Wait for the table to fully render
+            setTimeout(function () {
+                html2canvas(table, {
+                    allowTaint: true,
+                    useCORS: true,
+                    backgroundColor: null, // Try setting background color to null
+                    scale: window.devicePixelRatio, // Maintain device pixel ratio
+                }).then(function (canvas) {
+                    var link = document.createElement("a");
+                    link.href = canvas.toDataURL("image/png");
+                    link.download = "standings_screenshot.png";
+                    link.click();
+                });
+            }, 500); // Adjust the delay as needed (milliseconds)
+        }
+    </script>
+    
+    
+</body>
+</html>
