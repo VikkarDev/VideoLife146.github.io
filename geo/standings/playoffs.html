@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Playoff Tree</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #00ff00;
+            margin: 0;
+            padding: 20px;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #00ff00;
+        }
+    
+        #playoffTree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    
+        .round {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    
+        .matchup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0f0f0f;
+            padding: 10px;
+            border: 1px solid #00ff00;
+            margin: 10px;
+            min-width: 160px;
+        }
+
+    
+        .stage {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    
+        .team {
+            width: 100%;
+            padding: 5px;
+            text-align: center;
+            background-color: #0f0f0f;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+    
+        .vs {
+            font-weight: bold;
+            margin: 5px 0;
+            color: #00ff00;
+        }
+    
+        .score {
+            width: 100%;
+            background-color: #0f0f0f;
+            border-radius: 5px;
+            text-align: center;
+        }
+    
+        #screenshotBtn {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+    <div>
+        <h1>Playoff Tree</h1>
+
+        <!-- Improved: Display playoff tree with adjusted matchups -->
+        <div id="playoffTree">
+            <div class="round">
+                <div class="matchup">
+                    <div class="stage">Round of 16</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <div class="matchup">
+                    <div class="stage">Round of 16</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <div class="matchup">
+                    <div class="stage">Round of 16</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <div class="matchup">
+                    <div class="stage">Round of 16</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <!-- Adjusted to display all matchups horizontally -->
+            </div>
+
+            <div class="round">
+                <div class="matchup">
+                    <div class="stage">Quarterfinals</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <div class="matchup">
+                    <div class="stage">Quarterfinals</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <!-- Adjusted to display all matchups horizontally -->
+            </div>
+
+            <div class="round">
+                <div class="matchup">
+                    <div class="stage">Semifinals</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <!-- Adjusted to display all matchups horizontally -->
+            </div>
+
+            <div class="round">
+                <div class="matchup">
+                    <div class="stage">Final</div>
+                    <div class="team">TBD</div>
+                    <div class="score">0</div>
+                    <div class="vs">VS</div>
+                    <div class="score">0</div>
+                    <div class="team">TBD</div>
+                </div>
+                <!-- Adjusted to display all matchups horizontally -->
+            </div>
+        </div>
+    </div>
+    <button id="screenshotBtn" onclick="takeScreenshot()">Take Screenshot</button>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function takeScreenshot() {
+            html2canvas(document.getElementById("playoffTree"), {
+                backgroundColor: "#000", // Set the background color of the screenshot
+            }).then(function (canvas) {
+                var link = document.createElement('a');
+                link.href = canvas.toDataURL("image/png");
+                link.download = 'screenshot.png';
+                link.click();
+            });
+        }
+    </script>
+    
+</body> 
+</html>
