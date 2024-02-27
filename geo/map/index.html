@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country/Territory Locations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>Country/Territory Locations</h1>
+            </header>
+            <main>
+                <div class="image-container">
+                    <img src="MapChart_Map.png" alt="Image">
+                    <div class="image-text">Red = Is featured in the map.</div>
+                </div>
+                <table id="locationsTable">
+                    <thead>
+                        <tr>
+                            <th>Country / Territory</th>
+                            <th>Number of Locations</th>
+                            <th>Percentage of Total Locations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table data will be generated dynamically using JavaScript -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td id="totalLocations"></td>
+                            <td>100%</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
