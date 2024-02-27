@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Sample data (replace with your own data)
-    const data = [
-        { country: 'USA', locations: 50 },
-        { country: 'Canada', locations: 30 },
-        { country: 'UK', locations: 20 },
-        { country: 'Australia', locations: 40 },
-        { country: 'Germany', locations: 30 }
+    let data = [
+        { country: 'Laos', locations: 100 },
+        { country: 'United States of America', locations: 5000 },
+        { country: 'Canada', locations: 3650 },
+        { country: 'Australia', locations: 40 }
     ];
+
+    // Sort data alphabetically based on country names
+    data.sort((a, b) => a.country.localeCompare(b.country));
 
     // Calculate total number of locations
     let totalLocations = 0;
