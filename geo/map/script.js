@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { country: 'Italy', locations: 1749 },
         { country: 'Japan', locations: 1880 },
         { country: 'Jordan', locations: 600 },
+        { country: 'Kazakhstan', locations: 2300 },
         { country: 'Kenya', locations: 1449 },
         { country: 'Kyrgyzstan', locations: 600 },
         { country: 'Laos', locations: 46 },
