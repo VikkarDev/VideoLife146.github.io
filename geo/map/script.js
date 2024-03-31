@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { country: 'Slovakia', locations: 600 },
         { country: 'Slovenia', locations: 480 },
         { country: 'South Africa', locations: 2637 },
-        { country: 'South Korea', locations: 128 },
         { country: 'Spain', locations: 2389 },
         { country: 'Sri Lanka', locations: 890 },
         { country: 'Sweden', locations: 1550 },
