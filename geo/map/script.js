@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { country: 'Lithuania', locations: 600 },
         { country: 'Luxemburg', locations: 211 },
         { country: 'Malaysia', locations: 1900 },
+        { country: 'Malta', locations: 250 },
         { country: 'Mexico', locations: 2800 },
         { country: 'Mongolia', locations: 233 },
         { country: 'Montenegro', locations: 342 },
