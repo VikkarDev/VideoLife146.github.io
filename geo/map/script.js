@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { country: 'Turkey', locations: 1833 },
         { country: 'Ukraine', locations: 1200 },
         { country: 'United Kingdom', locations: 2505 },
-        { country: 'United States of America', locations: 5300 },
+        { country: 'United States of America', locations: 5135 },
         { country: 'Uruguay', locations: 900 }
     ];
 
