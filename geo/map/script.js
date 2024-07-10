@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { country: 'Croatia', locations: 800 },
         { country: 'Czechia', locations: 900 },
         { country: 'Denmark', locations: 900 },
+        { country: 'Curaçao', locations: 250 },
         { country: 'Ecuador', locations: 1050 },
         { country: 'Estonia', locations: 600 },
         { country: 'Eswatini', locations: 350 },
