@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { country: 'Ecuador', locations: 1050 },
         { country: 'Estonia', locations: 600 },
         { country: 'Eswatini', locations: 350 },
+        { country: 'Lebanon', locations: 225 },
         { country: 'Faroe Islands', locations: 250 },
         { country: 'Finland', locations: 1122 },
         { country: 'France', locations: 2235 },
