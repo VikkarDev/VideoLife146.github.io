@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333; /* Set a dark background color */
+            color: #fff; /* Set text color to white */
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 80%; /* Adjust width as needed */
+            height: 80%; /* Adjust height as needed */
+            max-width: 800px; /* Limit maximum width */
+            max-height: 600px; /* Limit maximum height */
+            background-color: #222; /* Set iframe container background color */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #444; /* Dark background for buttons */
+            color: #fff; /* Text color for buttons */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #666; /* Darker background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSla1k90wktFlhz8C-oZWxMz4vXfil8uHKbXI39uApqI17tW1vshQ0oso8CTsSEz9kC9LXNBYfGPLSQ/pubhtml?gid=30327860&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    </div>
+
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='https://challonge.com/l0bzmvb7';">Go to Playoffs</button>
+    </div>
+</body>
+</html>
